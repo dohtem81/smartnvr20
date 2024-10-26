@@ -1,0 +1,25 @@
+FROM dohtem81/gcc_opencv_base:latest
+WORKDIR /usr/src
+
+RUN git clone https://github.com/redis/hiredis.git
+RUN mkdir /usr/src/hiredis/build
+WORKDIR /usr/src/hiredis/build
+RUN cmake ../.
+RUN make
+RUN make install
+RUN make clean
+
+WORKDIR /usr/src
+RUN git clone https://github.com/gabime/spdlog.git
+RUN mkdir /usr/src/spdlog/build
+WORKDIR /usr/src/spdlog/build
+RUN cmake ../.
+RUN make
+RUN make install
+RUN make clean
+
+RUN ldconfig
+
+WORKDIR /usr/smartnvr20
+
+CMD ["/bin/bash"]

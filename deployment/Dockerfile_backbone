@@ -1,0 +1,11 @@
+# Use the latest image of dragonflydb/dragonfly
+FROM docker.dragonflydb.io/dragonflydb/dragonfly:latest
+
+# Set the network as host
+# Note: Dockerfile doesn't support --network flag directly. You need to set it when running the container.
+
+# Set the ulimit for memlock
+# Note: Dockerfile doesn't support --ulimit flag directly. You need to set it when running the container.
+
+# Set the default command for the container
+CMD ["/bin/bash"]

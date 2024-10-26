@@ -1,0 +1,27 @@
+services:
+  backbone:
+    build: 
+      context: .
+      dockerfile: Dockerfile_backbone
+    tty: true
+    networks:
+      - nvr-internal-network    
+    ulimits:
+      memlock: -1
+    ports:
+      - "6379:6379"
+  
+  nvrbackend:
+    build: 
+      context: .
+      dockerfile: Dockerfile_backend
+    tty: true
+    networks:
+      - nvr-internal-network
+    volumes:
+      - ./source/smartNVR.backend:/usr/src/smartNVR.backend
+
+networks:
+  nvr-internal-network:
+    external: false
+    name: nvr-internal-network

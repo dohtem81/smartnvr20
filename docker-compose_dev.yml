@@ -1,0 +1,28 @@
+services:
+  dragonfly:
+    build: 
+      context: .
+      dockerfile: ./deployment/Dockerfile_backbone
+    tty: true
+    networks:
+      - nvr-internal-network    
+    ulimits:
+      memlock: -1
+    ports:
+      - "6379:6379"
+  
+  nvrbuilder:
+    build:
+      context: .
+      dockerfile: ./deployment/Dockerfile_dev
+    tty: true
+    networks:
+      - nvr-internal-network
+    volumes:
+      - ./code:/usr/smartnvr20
+      
+
+networks:
+  nvr-internal-network:
+    external: false
+    name: nvr-internal-network
