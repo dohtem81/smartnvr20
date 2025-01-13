@@ -1,0 +1,6 @@
+{
+    "name" : "camera_channel_01",
+    "connectionstring" : "rtsp://admin:ARadecka@192.168.0.180:8554/Streaming/channels/101",
+    "saveframepath" : "./frames/",
+    "buffersize" : 10
+}

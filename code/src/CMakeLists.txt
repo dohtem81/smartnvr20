@@ -11,7 +11,16 @@ include_directories( ${hiredis_INCLUDE_DIRS} )
 find_package( spdlog REQUIRED )
 include_directories( ${spdlog_INCLUDE_DIRS} )
 
+add_executable( commbus_mod
+    ./commbus/domain/framehandler.cpp 
+    ./commbus/main.cpp)
+target_link_libraries(commbus_mod ${OpenCV_LIBS} ${hiredis_LIBRARIES} ${spdlog_LIBS} ) 
+
 add_executable( camera_mod 
     ./camera/application/camera.cpp 
     ./camera/main.cpp)
+
+add_executable( camera_test_01 
+    ./camera/application/cameraDevice.cpp 
+    ./tests/camera_test_01.cpp)    
 target_link_libraries( camera_mod ${OpenCV_LIBS} ${hiredis_LIBRARIES} ${spdlog_LIBS} ) 

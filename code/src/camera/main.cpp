@@ -1,10 +1,19 @@
+#include <iostream>
 #include "application/camera.hpp"
+#include "../lib/FileLocation.hpp"
 
 using namespace smartnvr20;
 
 int main()
 {
-    std::shared_ptr<Camera> camera = CameraFactory();
+    const char* configPath = std::getenv("CONFIG_PATH");
+    if (configPath == nullptr) {
+        std::cerr << "CONFIG_PATH environment variable is not set. Using default path." << std::endl;
+        return 1;
+    }
+
+    std::shared_ptr<lib::FileLocation> configFileLocation = std::make_shared<lib::FileLocation>(configPath, "config.json");    
+    std::shared_ptr<application::Camera> camera = application::CameraFactory(configFileLocation);
     camera->run();
     pthread_join(camera->camera_thread, NULL);    
 

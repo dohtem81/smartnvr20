@@ -1,15 +1,17 @@
 services:
   dragonfly:
-    build: 
-      context: .
-      dockerfile: ./deployment/Dockerfile_backbone
-    tty: true
-    networks:
-      - nvr-internal-network    
+    image: docker.dragonflydb.io/dragonflydb/dragonfly:latest
     ulimits:
       memlock: -1
     ports:
       - "6379:6379"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - nvr-internal-network        
   
   nvrbuilder:
     build:

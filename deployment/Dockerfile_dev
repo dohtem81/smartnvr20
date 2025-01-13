@@ -18,6 +18,15 @@ RUN make
 RUN make install
 RUN make clean
 
+WORKDIR /usr/src
+RUN git clone https://github.com/nlohmann/json.git
+RUN mkdir /usr/src/json/build
+WORKDIR /usr/src/json/build
+RUN cmake ../.
+RUN make
+RUN make install
+RUN make clean
+
 RUN ldconfig
 
 WORKDIR /usr/smartnvr20

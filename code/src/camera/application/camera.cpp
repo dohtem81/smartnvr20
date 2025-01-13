@@ -1,47 +1,119 @@
 #include "camera.hpp"
 
-namespace smartnvr20 {
+using namespace smartnvr20::application;
+using namespace smartnvr20;
 
-void Camera::run()
+std::shared_ptr<Camera> CameraFactory(std::shared_ptr<lib::FileLocation> _configFileLocation)
 {
-    pthread_create(&camera_thread, NULL, Camera::cameraMainLoop, this);  
-    return;
+    return std::make_shared<Camera>(_configFileLocation);
 }
 
-void *Camera::cameraMainLoop(void *context)
+Camera::Camera(std::shared_ptr<lib::FileLocation> _configFileLocation)
 {
-    return static_cast<Camera*>(context)->mainLoop();
+    config = std::make_shared<infrastructure::CameraConfig>(_configFileLocation);
 }
 
 void *Camera::mainLoop()
 {
-    spdlog::info("camera is active and running");
-    while(true)
-    {
-        spdlog::info("camera tick");
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    spdlog::info("camera mainloop entered");
+
+    int retryConncetion = 0;
+    cap = std::make_shared<cv::VideoCapture>();
+
+    // Variables for FPS calculation
+    int frameCount = 0;
+    double fps = 0.0;
+    double startTime = cv::getTickCount();
+
+    // Initialize Redis connection
+    redisContext* redisContext = redisConnect("127.0.0.1", 6379);
+    if (redisContext == nullptr || redisContext->err) {
+        if (redisContext) {
+            spdlog::error("Redis connection error: " + std::string(redisContext->errstr));
+            redisFree(redisContext);
+        } else {
+            spdlog::error("Can't allocate Redis context");
+        }
+        return nullptr;
     }
 
+    while(active)
+    {
+        // if cap is not opened, try to open it
+        if (!cap->isOpened())
+        {
+            retryConncetion++;
+            cap->open(config->getURL());
+            if (cap->isOpened())
+            {
+                //this->features = CameraFeatures::CameraFeaturesFactory(cap);
+                //spdlog::info(conectionString + " [SUCCESS]" + " >>> features " + CameraFeatures::to_string(features));
+                spdlog::info(config->getURL() + " [SUCCESS]");
+                // reset retry counter for the future
+                retryConncetion = 0;
+            }
+            else
+            {
+                if (retryConncetion > 3)
+                {
+                    spdlog::error(config->getURL() + " [FAILED]"); 
+                    break;
+                }
+            }
+        }
+        else // this is the case when cap is opened
+        {
+            conectionEstablished = true;
+            if (cap->read(currentFrame))
+            {
+                //Frame frameToAdd;
+                //currentFrame.copyTo(frameToAdd);
+                collectedFrames++;
+                //frames_ptr->addFrame(std::make_shared<Frame>(frameToAdd));
+
+                // Serialize the frame
+                std::vector<uchar> buf;
+                cv::imencode(".jpg", currentFrame, buf);
+                std::string encodedFrame(buf.begin(), buf.end());
+
+                // Add the frame to the Redis queue with expiration
+                redisReply* reply = (redisReply*)redisCommand(redisContext, "RPUSH my_queue %b", encodedFrame.data(), encodedFrame.size());
+                if (reply == nullptr) {
+                    spdlog::error("Redis RPUSH error: " + std::string(redisContext->errstr));
+                } else {
+                    freeReplyObject(reply);
+                    // Set expiration time for the queue (e.g., 10 seconds)
+                    reply = (redisReply*)redisCommand(redisContext, "EXPIRE my_queue 10");
+                    if (reply == nullptr) {
+                        spdlog::error("Redis EXPIRE error: " + std::string(redisContext->errstr));
+                    } else {
+                        freeReplyObject(reply);
+                    }
+                }
+
+                // Increment frame count
+                frameCount++;
+
+                // Calculate elapsed time
+                double currentTime = cv::getTickCount();
+                double elapsedTime = (currentTime - startTime) / cv::getTickFrequency();
+
+                // Update FPS every second
+                if (elapsedTime >= 1.0)
+                {
+                    fps = frameCount / elapsedTime;
+                    spdlog::info("FPS: " + std::to_string(fps));
+
+                    // Reset frame count and start time
+                    frameCount = 0;
+                    startTime = currentTime;
+                }
+            }
+        }
+    }
+
+    cap->release();
+    redisFree(redisContext); // Clean up Redis connection
+    spdlog::info("Stopping >>" + config->getURL() + " [SUCCESS]");
     return 0;
 }
-
-std::shared_ptr<Camera> CameraFactory()
-{
-    // if (Camera::initialized)
-    //     return nullptr;
-    
-    Camera* _camera = new Camera();
-    //Camera::initialized = true;
-    std::shared_ptr<Camera> cameraUPtr(_camera);
-
-    return cameraUPtr;    
-}
-
-Camera::Camera()
-{
-    logger = spdlog::daily_logger_mt("daily_logger", "./", 0, 00);
-    spdlog::info("Camera object created");
-
-}
-
-} // namespace smartnvr20
