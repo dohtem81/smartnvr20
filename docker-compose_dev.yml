@@ -5,6 +5,8 @@ services:
       memlock: -1
     ports:
       - "6379:6379"
+    environment:
+      - DRAGONFLY_PASSWORD=DFlyPswd2025!
     logging:
       driver: "json-file"
       options:
@@ -22,6 +24,8 @@ services:
       - nvr-internal-network
     volumes:
       - ./code:/usr/smartnvr20
+      - ./config_tests:/usr/local/etc/smartnvr20_tests
+      - ./config:/usr/local/etc/smartnvr20
       
 
 networks:

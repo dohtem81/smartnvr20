@@ -1,0 +1,6 @@
+/usr/smartnvr20/src/build/CMakeFiles/commbus_test_01.dir
+/usr/smartnvr20/src/build/CMakeFiles/camera_test_01.dir
+/usr/smartnvr20/src/build/CMakeFiles/filelocation_test_01.dir
+/usr/smartnvr20/src/build/CMakeFiles/test.dir
+/usr/smartnvr20/src/build/CMakeFiles/edit_cache.dir
+/usr/smartnvr20/src/build/CMakeFiles/rebuild_cache.dir
