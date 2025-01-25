@@ -11,6 +11,11 @@
 },
 {
   "directory": "/usr/smartnvr20/src/build",
+  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o -c /usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp",
+  "file": "/usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp"
+},
+{
+  "directory": "/usr/smartnvr20/src/build",
   "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o -c /usr/smartnvr20/src/tests/infrastructure/commbus_test_01.cpp",
   "file": "/usr/smartnvr20/src/tests/infrastructure/commbus_test_01.cpp"
 },

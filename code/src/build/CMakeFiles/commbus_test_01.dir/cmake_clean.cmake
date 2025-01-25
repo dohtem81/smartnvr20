@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o"
+  "CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o.d"
   "CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.o"
   "CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.o.d"
   "CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.o"

@@ -189,6 +189,30 @@ domain/cameraDevice.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera_test_01.dir/build.make CMakeFiles/camera_test_01.dir/domain/cameraDevice.cpp.s
 .PHONY : domain/cameraDevice.cpp.s
 
+infrastructure/RedisClient/busclient.o: infrastructure/RedisClient/busclient.cpp.o
+.PHONY : infrastructure/RedisClient/busclient.o
+
+# target to build an object file
+infrastructure/RedisClient/busclient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o
+.PHONY : infrastructure/RedisClient/busclient.cpp.o
+
+infrastructure/RedisClient/busclient.i: infrastructure/RedisClient/busclient.cpp.i
+.PHONY : infrastructure/RedisClient/busclient.i
+
+# target to preprocess a source file
+infrastructure/RedisClient/busclient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.i
+.PHONY : infrastructure/RedisClient/busclient.cpp.i
+
+infrastructure/RedisClient/busclient.s: infrastructure/RedisClient/busclient.cpp.s
+.PHONY : infrastructure/RedisClient/busclient.s
+
+# target to generate assembly for a file
+infrastructure/RedisClient/busclient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.s
+.PHONY : infrastructure/RedisClient/busclient.cpp.s
+
 infrastructure/framehandler.o: infrastructure/framehandler.cpp.o
 .PHONY : infrastructure/framehandler.o
 
@@ -324,6 +348,9 @@ help:
 	@echo "... domain/cameraDevice.o"
 	@echo "... domain/cameraDevice.i"
 	@echo "... domain/cameraDevice.s"
+	@echo "... infrastructure/RedisClient/busclient.o"
+	@echo "... infrastructure/RedisClient/busclient.i"
+	@echo "... infrastructure/RedisClient/busclient.s"
 	@echo "... infrastructure/framehandler.o"
 	@echo "... infrastructure/framehandler.i"
 	@echo "... infrastructure/framehandler.s"

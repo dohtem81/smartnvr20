@@ -97,10 +97,24 @@ CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.s"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/smartnvr20/src/infrastructure/framehandlerconfig.cpp -o CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.s
 
+CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o: CMakeFiles/commbus_test_01.dir/flags.make
+CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o: /usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp
+CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o: CMakeFiles/commbus_test_01.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o -MF CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o.d -o CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o -c /usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp
+
+CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.i"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp > CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.i
+
+CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.s"
+	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp -o CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.s
+
 CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o: CMakeFiles/commbus_test_01.dir/flags.make
 CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o: /usr/smartnvr20/src/tests/infrastructure/commbus_test_01.cpp
 CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o: CMakeFiles/commbus_test_01.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o"
 	/usr/local/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o -MF CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o.d -o CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o -c /usr/smartnvr20/src/tests/infrastructure/commbus_test_01.cpp
 
 CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.i: cmake_force
@@ -115,6 +129,7 @@ CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.s: cmake
 commbus_test_01_OBJECTS = \
 "CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.o" \
 "CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.o" \
+"CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o" \
 "CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o"
 
 # External object files for target commbus_test_01
@@ -122,6 +137,7 @@ commbus_test_01_EXTERNAL_OBJECTS =
 
 tests/commbus_test_01: CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.o
 tests/commbus_test_01: CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.o
+tests/commbus_test_01: CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o
 tests/commbus_test_01: CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o
 tests/commbus_test_01: CMakeFiles/commbus_test_01.dir/build.make
 tests/commbus_test_01: /usr/local/lib/libopencv_gapi.so.4.9.0
@@ -142,7 +158,7 @@ tests/commbus_test_01: /usr/local/lib/libopencv_flann.so.4.9.0
 tests/commbus_test_01: /usr/local/lib/libopencv_imgproc.so.4.9.0
 tests/commbus_test_01: /usr/local/lib/libopencv_core.so.4.9.0
 tests/commbus_test_01: CMakeFiles/commbus_test_01.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable tests/commbus_test_01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable tests/commbus_test_01"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/commbus_test_01.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

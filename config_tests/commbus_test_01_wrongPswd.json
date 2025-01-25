@@ -3,6 +3,6 @@
     {
         "host": "smartnvr20-dragonfly-1",
         "port": 6379,
-        "pswd": "DFlyPswd2025!"
+        "pswd": "wrongPasssword"
     }
 }

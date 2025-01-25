@@ -6,7 +6,7 @@ services:
     ports:
       - "6379:6379"
     environment:
-      - DRAGONFLY_PASSWORD=DFlyPswd2025!
+      - DRAGONFLY_PASSWORD=${DRAGONFLY_PASSWORD}
     logging:
       driver: "json-file"
       options:
@@ -14,6 +14,7 @@ services:
         max-file: "3"
     networks:
       - nvr-internal-network        
+    command: ["/usr/local/bin/dragonfly", "--requirepass", "${DRAGONFLY_PASSWORD}"]
   
   nvrbuilder:
     build:
@@ -27,6 +28,14 @@ services:
       - ./config_tests:/usr/local/etc/smartnvr20_tests
       - ./config:/usr/local/etc/smartnvr20
       
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    ports:
+      - "8081:8081"
+    networks:
+      - nvr-internal-network
+    depends_on:
+      - dragonfly
 
 networks:
   nvr-internal-network:

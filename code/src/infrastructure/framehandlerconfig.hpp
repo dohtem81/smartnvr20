@@ -1,3 +1,6 @@
+#ifndef FRAMEHANDLERCONFIG_HPP
+#define FRAMEHANDLERCONFIG_HPP
+
 #include "../lib/iConfiguration.hpp"
 #include <fstream>
 #include <nlohmann/json.hpp>
@@ -11,9 +14,9 @@ class FrameHandlerConfig : public iConfiguration {
 public:
     FrameHandlerConfig(std::shared_ptr<smartnvr20::lib::FileLocation> _configFileLocation);
 
-    std::string getHost() { return host; };
+    std::string getHost() { return host; }
     int getPort() { return port; }
-    std::string getPassword() { return dbPassword; }
+    std::string getPassword() { return (dbPassword.empty() ? "" : dbPassword); }
 private:
     std::string host;
     int port;
@@ -21,3 +24,5 @@ private:
 };
 
 } // namespace smartnvr20::infrastructure
+
+#endif // FRAMEHANDLERCONFIG_HPP

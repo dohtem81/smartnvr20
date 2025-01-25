@@ -15,8 +15,8 @@ FrameHandlerConfig::FrameHandlerConfig(std::shared_ptr<smartnvr20::lib::FileLoca
 
 if (j.contains("commbus")) {
         host = j["commbus"]["host"];
-        port = j["commbus"]["port"];
-        dbPassword = j["commbus"]["pswd"];
+        port = j["commbus"].contains("port") ? j["commbus"]["port"].get<int>() : 6379;
+        dbPassword = j["commbus"].contains("pswd") ? j["commbus"]["pswd"].get<std::string>() : "";
     } else {
         throw std::runtime_error("Missing 'commbus' section in config file");
     }
