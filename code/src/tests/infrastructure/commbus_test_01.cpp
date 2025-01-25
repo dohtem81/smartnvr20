@@ -79,7 +79,7 @@ TEST_F(BusClientTestConfigFile, _busClient_NoPassword) {
     std::shared_ptr<FrameHandlerConfig> frameHandlerConfig = std::make_shared<FrameHandlerConfig>(fileLocation_NoPasswd);
     std::shared_ptr<busclient::BusClient> _busclient = busclient::BusClientFactory(frameHandlerConfig->getHost(), frameHandlerConfig->getPort());
     ASSERT_NE(_busclient, nullptr);     
-    EXPECT_EQ(_busclient->toString(), "Redis host: smartnvr20-dragonfly-1 port: 6379 AUTH: NO STATUS: AUTH_ERROR\n");
+    EXPECT_EQ(_busclient->toString(), "Redis host: smartnvr20-dragonfly-1 port: 6379 AUTH: YES STATUS: AUTH_ERROR\n");
 }
 
 

@@ -13,12 +13,7 @@ std::shared_ptr<BusClient> BusClientFactory(std::string host, int port, std::str
     }
 
     busClientPtr->authRequired = true;
-
-    // if password is not empty authorize
-    if (busClientPtr->authRequired && !password.empty())
-    {
-        busClientPtr->status = busClientPtr->Authorize(password) == BusStatus::OK ? BusStatus::OK : BusStatus::AUTH_ERROR;
-    }
+    busClientPtr->status = busClientPtr->Authorize(password) == BusStatus::OK ? BusStatus::OK : BusStatus::AUTH_ERROR;
     
     return busClientPtr;
 }
