@@ -9,8 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp" "CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o" "gcc" "CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o.d"
-  "/usr/smartnvr20/src/infrastructure/framehandler.cpp" "CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.o" "gcc" "CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.o.d"
-  "/usr/smartnvr20/src/infrastructure/framehandlerconfig.cpp" "CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.o" "gcc" "CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.o.d"
   "/usr/smartnvr20/src/tests/infrastructure/commbus_test_01.cpp" "CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o" "gcc" "CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o.d"
   )
 

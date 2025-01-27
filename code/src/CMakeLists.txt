@@ -19,11 +19,16 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 add_executable( commbus_test_01
-    ./infrastructure/framehandler.cpp 
-    ./infrastructure/framehandlerconfig.cpp
     ./infrastructure/RedisClient/busclient.cpp
     ./tests/infrastructure/commbus_test_01.cpp)
 target_link_libraries(commbus_test_01 ${OpenCV_LIBS} ${hiredis_LIBRARIES} ${spdlog_LIBS} ${nlohmann_json_LIBS} ${GTEST_LIBRARIES} pthread) 
+
+add_executable( framehandler_test_01
+    ./infrastructure/framehandler.cpp 
+    ./infrastructure/framehandlerconfig.cpp
+    ./infrastructure/RedisClient/busclient.cpp
+    ./tests/infrastructure/framehandler_test_01.cpp)
+target_link_libraries(framehandler_test_01 ${OpenCV_LIBS} ${hiredis_LIBRARIES} ${spdlog_LIBS} ${nlohmann_json_LIBS} ${GTEST_LIBRARIES} pthread) 
 
 add_executable( camera_test_01 
     ./domain/cameraDevice.cpp 

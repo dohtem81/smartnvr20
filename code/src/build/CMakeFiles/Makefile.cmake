@@ -73,6 +73,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/commbus_test_01.dir/DependInfo.cmake"
+  "CMakeFiles/framehandler_test_01.dir/DependInfo.cmake"
   "CMakeFiles/camera_test_01.dir/DependInfo.cmake"
   "CMakeFiles/filelocation_test_01.dir/DependInfo.cmake"
   )

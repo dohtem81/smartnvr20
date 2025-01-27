@@ -13,6 +13,7 @@ namespace smartnvr20::lib
     class iConfiguration
     {
     public:
+        iConfiguration() : pathAndFileName("") {}
         // Pure virtual method to get configuration
         //virtual std::shared_ptr<iConfiguration> getConfig() const = 0;
 

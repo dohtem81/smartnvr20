@@ -1,4 +1,5 @@
 /usr/smartnvr20/src/build/CMakeFiles/commbus_test_01.dir
+/usr/smartnvr20/src/build/CMakeFiles/framehandler_test_01.dir
 /usr/smartnvr20/src/build/CMakeFiles/camera_test_01.dir
 /usr/smartnvr20/src/build/CMakeFiles/filelocation_test_01.dir
 /usr/smartnvr20/src/build/CMakeFiles/test.dir

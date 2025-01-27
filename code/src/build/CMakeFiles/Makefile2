@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /usr/smartnvr20/src/build
 
 # The main recursive "all" target.
 all: CMakeFiles/commbus_test_01.dir/all
+all: CMakeFiles/framehandler_test_01.dir/all
 all: CMakeFiles/camera_test_01.dir/all
 all: CMakeFiles/filelocation_test_01.dir/all
 .PHONY : all
@@ -74,6 +75,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/commbus_test_01.dir/clean
+clean: CMakeFiles/framehandler_test_01.dir/clean
 clean: CMakeFiles/camera_test_01.dir/clean
 clean: CMakeFiles/filelocation_test_01.dir/clean
 .PHONY : clean
@@ -85,12 +87,12 @@ clean: CMakeFiles/filelocation_test_01.dir/clean
 CMakeFiles/commbus_test_01.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=4,5,6,7,8 "Built target commbus_test_01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=4,5,6 "Built target commbus_test_01"
 .PHONY : CMakeFiles/commbus_test_01.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/commbus_test_01.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /usr/smartnvr20/src/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /usr/smartnvr20/src/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/commbus_test_01.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /usr/smartnvr20/src/build/CMakeFiles 0
 .PHONY : CMakeFiles/commbus_test_01.dir/rule
@@ -103,6 +105,32 @@ commbus_test_01: CMakeFiles/commbus_test_01.dir/rule
 CMakeFiles/commbus_test_01.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/clean
 .PHONY : CMakeFiles/commbus_test_01.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/framehandler_test_01.dir
+
+# All Build rule for target.
+CMakeFiles/framehandler_test_01.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=9,10,11,12,13 "Built target framehandler_test_01"
+.PHONY : CMakeFiles/framehandler_test_01.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/framehandler_test_01.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /usr/smartnvr20/src/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/framehandler_test_01.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /usr/smartnvr20/src/build/CMakeFiles 0
+.PHONY : CMakeFiles/framehandler_test_01.dir/rule
+
+# Convenience name for target.
+framehandler_test_01: CMakeFiles/framehandler_test_01.dir/rule
+.PHONY : framehandler_test_01
+
+# clean rule for target.
+CMakeFiles/framehandler_test_01.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/clean
+.PHONY : CMakeFiles/framehandler_test_01.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/camera_test_01.dir
@@ -137,7 +165,7 @@ CMakeFiles/camera_test_01.dir/clean:
 CMakeFiles/filelocation_test_01.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/filelocation_test_01.dir/build.make CMakeFiles/filelocation_test_01.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/filelocation_test_01.dir/build.make CMakeFiles/filelocation_test_01.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=9,10 "Built target filelocation_test_01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/usr/smartnvr20/src/build/CMakeFiles --progress-num=7,8 "Built target filelocation_test_01"
 .PHONY : CMakeFiles/filelocation_test_01.dir/all
 
 # Build rule for subdir invocation for target.

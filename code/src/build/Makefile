@@ -140,6 +140,19 @@ commbus_test_01/fast:
 .PHONY : commbus_test_01/fast
 
 #=============================================================================
+# Target rules for targets named framehandler_test_01
+
+# Build rule for target.
+framehandler_test_01: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 framehandler_test_01
+.PHONY : framehandler_test_01
+
+# fast build rule for target.
+framehandler_test_01/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/build
+.PHONY : framehandler_test_01/fast
+
+#=============================================================================
 # Target rules for targets named camera_test_01
 
 # Build rule for target.
@@ -195,6 +208,7 @@ infrastructure/RedisClient/busclient.o: infrastructure/RedisClient/busclient.cpp
 # target to build an object file
 infrastructure/RedisClient/busclient.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/RedisClient/busclient.cpp.o
 .PHONY : infrastructure/RedisClient/busclient.cpp.o
 
 infrastructure/RedisClient/busclient.i: infrastructure/RedisClient/busclient.cpp.i
@@ -203,6 +217,7 @@ infrastructure/RedisClient/busclient.i: infrastructure/RedisClient/busclient.cpp
 # target to preprocess a source file
 infrastructure/RedisClient/busclient.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/RedisClient/busclient.cpp.i
 .PHONY : infrastructure/RedisClient/busclient.cpp.i
 
 infrastructure/RedisClient/busclient.s: infrastructure/RedisClient/busclient.cpp.s
@@ -211,6 +226,7 @@ infrastructure/RedisClient/busclient.s: infrastructure/RedisClient/busclient.cpp
 # target to generate assembly for a file
 infrastructure/RedisClient/busclient.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/RedisClient/busclient.cpp.s
 .PHONY : infrastructure/RedisClient/busclient.cpp.s
 
 infrastructure/framehandler.o: infrastructure/framehandler.cpp.o
@@ -218,7 +234,7 @@ infrastructure/framehandler.o: infrastructure/framehandler.cpp.o
 
 # target to build an object file
 infrastructure/framehandler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/framehandler.cpp.o
 .PHONY : infrastructure/framehandler.cpp.o
 
 infrastructure/framehandler.i: infrastructure/framehandler.cpp.i
@@ -226,7 +242,7 @@ infrastructure/framehandler.i: infrastructure/framehandler.cpp.i
 
 # target to preprocess a source file
 infrastructure/framehandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/framehandler.cpp.i
 .PHONY : infrastructure/framehandler.cpp.i
 
 infrastructure/framehandler.s: infrastructure/framehandler.cpp.s
@@ -234,7 +250,7 @@ infrastructure/framehandler.s: infrastructure/framehandler.cpp.s
 
 # target to generate assembly for a file
 infrastructure/framehandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/framehandler.cpp.s
 .PHONY : infrastructure/framehandler.cpp.s
 
 infrastructure/framehandlerconfig.o: infrastructure/framehandlerconfig.cpp.o
@@ -242,7 +258,7 @@ infrastructure/framehandlerconfig.o: infrastructure/framehandlerconfig.cpp.o
 
 # target to build an object file
 infrastructure/framehandlerconfig.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/framehandlerconfig.cpp.o
 .PHONY : infrastructure/framehandlerconfig.cpp.o
 
 infrastructure/framehandlerconfig.i: infrastructure/framehandlerconfig.cpp.i
@@ -250,7 +266,7 @@ infrastructure/framehandlerconfig.i: infrastructure/framehandlerconfig.cpp.i
 
 # target to preprocess a source file
 infrastructure/framehandlerconfig.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/framehandlerconfig.cpp.i
 .PHONY : infrastructure/framehandlerconfig.cpp.i
 
 infrastructure/framehandlerconfig.s: infrastructure/framehandlerconfig.cpp.s
@@ -258,7 +274,7 @@ infrastructure/framehandlerconfig.s: infrastructure/framehandlerconfig.cpp.s
 
 # target to generate assembly for a file
 infrastructure/framehandlerconfig.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/framehandlerconfig.cpp.s
 .PHONY : infrastructure/framehandlerconfig.cpp.s
 
 tests/domain/camera_test_01.o: tests/domain/camera_test_01.cpp.o
@@ -309,6 +325,30 @@ tests/infrastructure/commbus_test_01.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.s
 .PHONY : tests/infrastructure/commbus_test_01.cpp.s
 
+tests/infrastructure/framehandler_test_01.o: tests/infrastructure/framehandler_test_01.cpp.o
+.PHONY : tests/infrastructure/framehandler_test_01.o
+
+# target to build an object file
+tests/infrastructure/framehandler_test_01.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/tests/infrastructure/framehandler_test_01.cpp.o
+.PHONY : tests/infrastructure/framehandler_test_01.cpp.o
+
+tests/infrastructure/framehandler_test_01.i: tests/infrastructure/framehandler_test_01.cpp.i
+.PHONY : tests/infrastructure/framehandler_test_01.i
+
+# target to preprocess a source file
+tests/infrastructure/framehandler_test_01.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/tests/infrastructure/framehandler_test_01.cpp.i
+.PHONY : tests/infrastructure/framehandler_test_01.cpp.i
+
+tests/infrastructure/framehandler_test_01.s: tests/infrastructure/framehandler_test_01.cpp.s
+.PHONY : tests/infrastructure/framehandler_test_01.s
+
+# target to generate assembly for a file
+tests/infrastructure/framehandler_test_01.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/tests/infrastructure/framehandler_test_01.cpp.s
+.PHONY : tests/infrastructure/framehandler_test_01.cpp.s
+
 tests/lib/filelocation_test_01.o: tests/lib/filelocation_test_01.cpp.o
 .PHONY : tests/lib/filelocation_test_01.o
 
@@ -345,6 +385,7 @@ help:
 	@echo "... camera_test_01"
 	@echo "... commbus_test_01"
 	@echo "... filelocation_test_01"
+	@echo "... framehandler_test_01"
 	@echo "... domain/cameraDevice.o"
 	@echo "... domain/cameraDevice.i"
 	@echo "... domain/cameraDevice.s"
@@ -363,6 +404,9 @@ help:
 	@echo "... tests/infrastructure/commbus_test_01.o"
 	@echo "... tests/infrastructure/commbus_test_01.i"
 	@echo "... tests/infrastructure/commbus_test_01.s"
+	@echo "... tests/infrastructure/framehandler_test_01.o"
+	@echo "... tests/infrastructure/framehandler_test_01.i"
+	@echo "... tests/infrastructure/framehandler_test_01.s"
 	@echo "... tests/lib/filelocation_test_01.o"
 	@echo "... tests/lib/filelocation_test_01.i"
 	@echo "... tests/lib/filelocation_test_01.s"
