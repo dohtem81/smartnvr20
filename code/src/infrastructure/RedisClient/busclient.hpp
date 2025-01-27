@@ -64,10 +64,6 @@ private:
 };
 
 std::shared_ptr<BusClient> BusClientFactory(std::string host, int port = 6379, std::string password = "");
-// template bool BusClient::StoreInRedis<int>(const std::string& key, const int& value);
-// template bool BusClient::StoreInRedis<float>(const std::string& key, const float& value);
-// template bool BusClient::StoreInRedis<double>(const std::string& key, const double& value);
-// template bool BusClient::StoreInRedis<std::string>(const std::string& key, const std::string& value);
 } // namespace smartnvr20::infrastructure::redisclient
 
 #include "busclientimpl.hpp"

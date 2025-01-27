@@ -140,18 +140,18 @@ int BusClient::GetExpiringQueueLength(const std::string& queueKey) {
     redisReply* reply = (redisReply*)redisCommand(rContext.get(), "LRANGE %s 0 -1", queueKey.c_str());
     if (!reply) return 0;
     
-    CleanupExpiredKeys(queueKey);
-    return GetQueueLength(queueKey);
-    // int validKeys = 0;
-    // for (size_t i = 0; i < reply->elements; i++) {
-    //     std::string itemKey = reply->element[i]->str;
-    //     if (KeyExists(itemKey)) {
-    //         validKeys++;
-    //     }
-    // }
-    
-    // freeReplyObject(reply);
-    // return validKeys;
+    for (size_t i = 0; i < reply->elements; i++) {
+        std::string itemKey = reply->element[i]->str;
+
+        if (!KeyExists(itemKey)) {
+            redisCommand(rContext.get(), "LREM %s 0 %s", queueKey.c_str(), itemKey.c_str());
+            std::cout << "Removed expired key: " << itemKey << std::endl;
+        }
+    }
+    freeReplyObject(reply);
+
+    int validKeys = GetQueueLength(queueKey);    
+    return validKeys;
 }
 
 
@@ -179,6 +179,7 @@ bool BusClient::CleanupExpiredKeys(const std::string& queueKey) {
         std::string itemKey = reply->element[i]->str;
         if (IsKeyExpired(itemKey)) {
             redisCommand(rContext.get(), "LREM %s 0 %s", queueKey.c_str(), itemKey.c_str());
+            std::cout << "Removed expired key: " << itemKey << std::endl;
         }
         else break;
     }
@@ -192,11 +193,22 @@ bool BusClient::CleanupExpiredKeys(const std::string& queueKey) {
 
 // ------------------------------------------------------------------
 bool BusClient::IsKeyExpired(const std::string& key) {
-    redisReply* reply = (redisReply*)redisCommand(rContext.get(), "EXISTS %s", key.c_str());
-    if (!reply) return true;
+    // Check if key exists
+    redisReply* existsReply = (redisReply*)redisCommand(rContext.get(), "EXISTS %s", key.c_str());
+    if (!existsReply) return true;
     
-    bool expired = (reply->integer == 0);
-    freeReplyObject(reply);
+    bool exists = (existsReply->integer == 1);
+    freeReplyObject(existsReply);
+
+    if (!exists) return true;
+
+    // Check TTL
+    redisReply* ttlReply = (redisReply*)redisCommand(rContext.get(), "TTL %s", key.c_str());
+    if (!ttlReply) return true;
+    
+    bool expired = (ttlReply->integer <= 0);
+    freeReplyObject(ttlReply);
+
     return expired;
 }
 

@@ -144,21 +144,24 @@ TEST_F(BusClientTestOperations, _busClient_StoreAndGetQueue) {
 }
 
 TEST_F(BusClientTestOperations, _busClient_StoreAndGetExpiringQueue) {
-    _busclient->AddToRedisQueueWithExpiry("test_exq", 1, 4);
-    _busclient->AddToRedisQueueWithExpiry("test_exq", 2, 4);
+    _busclient->AddToRedisQueueWithExpiry("test_exq", 1.f, 4);    // this expires at t=4
+    _busclient->AddToRedisQueueWithExpiry("test_exq", 2.f, 4);    // this expires at t=4
     int queueLength = _busclient->GetExpiringQueueLength("test_exq");
     EXPECT_EQ(queueLength, 2);
-    sleep(1);
+    sleep(2); // t = 2
     queueLength = _busclient->GetExpiringQueueLength("test_exq");
     EXPECT_EQ(queueLength, 2);    
-    _busclient->AddToRedisQueueWithExpiry("test_exq", 3, 4);
-    _busclient->AddToRedisQueueWithExpiry("test_exq", 4, 4);
-    _busclient->AddToRedisQueueWithExpiry("test_exq", 5, 4);
+    _busclient->AddToRedisQueueWithExpiry("test_exq", 3, 4);    // this expires at t=6
+    _busclient->AddToRedisQueueWithExpiry("test_exq", 4, 4);    // this expires at t=6
+    _busclient->AddToRedisQueueWithExpiry("test_exq", 5, 4);    // this expires at t=6
     queueLength = _busclient->GetExpiringQueueLength("test_exq");
     EXPECT_EQ(queueLength, 5);
-    sleep(3);
+    sleep(3); // t = 5
     queueLength = _busclient->GetExpiringQueueLength("test_exq");
-    EXPECT_EQ(queueLength, 3);    
+    EXPECT_EQ(queueLength, 3);  
+    sleep(2); // t = 7
+    queueLength = _busclient->GetExpiringQueueLength("test_exq");
+    EXPECT_EQ(queueLength, 0);  
 }
 
 int main(int argc, char **argv) {
