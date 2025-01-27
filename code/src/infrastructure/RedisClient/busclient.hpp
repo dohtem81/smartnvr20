@@ -37,6 +37,23 @@ public:
     std::string toString() const;
     friend std::shared_ptr<BusClient> BusClientFactory(std::string host, int port, std::string password);
     std::shared_ptr<redisContext> GetBusContext(std::string, int);
+    template <typename T>
+    bool StoreInRedis(const std::string& key, const T& value);
+    template <typename T>
+    bool AddToRedisQueue(const std::string& key, const T& value);
+    bool SetExpiration(const std::string& key, int seconds);
+    template <typename T>
+    bool AddToRedisQueueWithExpiry(const std::string& queueKey, const T& value, int ttlSeconds);   
+    template <typename T>
+    bool GetFromRedis(const std::string& key, T& value);
+    template <typename T>
+    bool GetFromRedisQueue(const std::string& key, T& value);
+    int GetExpiration(const std::string& key);
+    int GetQueueLength(const std::string& key);
+    int GetExpiringQueueLength(const std::string& key);
+    bool KeyExists(const std::string& key);
+    bool CleanupExpiredKeys(const std::string& queueKey);
+    bool IsKeyExpired(const std::string& key);
 
 private:
     BusStatus status;
@@ -47,6 +64,12 @@ private:
 };
 
 std::shared_ptr<BusClient> BusClientFactory(std::string host, int port = 6379, std::string password = "");
+// template bool BusClient::StoreInRedis<int>(const std::string& key, const int& value);
+// template bool BusClient::StoreInRedis<float>(const std::string& key, const float& value);
+// template bool BusClient::StoreInRedis<double>(const std::string& key, const double& value);
+// template bool BusClient::StoreInRedis<std::string>(const std::string& key, const std::string& value);
 } // namespace smartnvr20::infrastructure::redisclient
+
+#include "busclientimpl.hpp"
 
 #endif // BUSCLIENT_HPP

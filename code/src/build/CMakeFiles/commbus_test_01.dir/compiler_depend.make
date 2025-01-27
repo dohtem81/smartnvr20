@@ -369,6 +369,7 @@ CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o: /usr/
   /usr/local/include/nlohmann/detail/macro_unscope.hpp \
   /usr/local/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
   /usr/smartnvr20/src/infrastructure/RedisClient/busclient_exceptions.hpp \
+  /usr/smartnvr20/src/infrastructure/RedisClient/busclientimpl.hpp \
   /usr/local/include/c++/14.2.0/iostream
 
 CMakeFiles/commbus_test_01.dir/infrastructure/framehandler.cpp.o: /usr/smartnvr20/src/infrastructure/framehandler.cpp \
@@ -1561,6 +1562,7 @@ CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o: /usr/
   /usr/smartnvr20/src/lib/iToString.hpp \
   /usr/smartnvr20/src/infrastructure/framehandlerconfig.hpp \
   /usr/smartnvr20/src/infrastructure/RedisClient/busclient_exceptions.hpp \
+  /usr/smartnvr20/src/infrastructure/RedisClient/busclientimpl.hpp \
   /usr/smartnvr20/src/infrastructure/framehandlerconfig.hpp
 
 
@@ -1667,6 +1669,8 @@ CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o: /usr/
 /usr/smartnvr20/src/infrastructure/framehandler.cpp:
 
 /usr/local/include/c++/14.2.0/iostream:
+
+/usr/smartnvr20/src/infrastructure/RedisClient/busclientimpl.hpp:
 
 /usr/smartnvr20/src/infrastructure/RedisClient/busclient_exceptions.hpp:
 
