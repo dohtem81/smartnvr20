@@ -14,6 +14,7 @@ class FrameHandlerConfig : public iConfiguration {
 public:
     FrameHandlerConfig(std::shared_ptr<smartnvr20::lib::FileLocation> _configFileLocation);
     FrameHandlerConfig(const std::string& _host, int _port, const std::string& _dbPassword);
+    FrameHandlerConfig() : iConfiguration() {};
 
     std::string getHost() { return host; }
     int getPort() { return port; }

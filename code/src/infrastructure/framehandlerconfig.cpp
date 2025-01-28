@@ -29,4 +29,8 @@ FrameHandlerConfig::FrameHandlerConfig(std::shared_ptr<smartnvr20::lib::FileLoca
 FrameHandlerConfig::FrameHandlerConfig(const std::string& _host, int _port = 6379, const std::string& _dbPassword = "")
     : iConfiguration(), host(_host), port(_port), dbPassword(_dbPassword) {
 }
+
+
+// ------------------------------------------------------------------
+
 } // namespace smartnvr20::infrastructure

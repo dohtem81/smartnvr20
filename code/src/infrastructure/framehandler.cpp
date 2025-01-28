@@ -4,22 +4,14 @@ namespace smartnvr20::infrastructure {
     // Define the static member variable
     bool FrameHandler::initialized = false;
     std::shared_ptr<busclient::BusClient> FrameHandler::busClient = nullptr;
+    std::shared_ptr<FrameHandler> FrameHandler::_selfPtr = nullptr;
 
     // ------------------------------------------------------------------
     std::string FrameHandler::toString() const
     {
         std::string outStr = "";
 
-        // if (rContext == nullptr)
-        // {
-        //     outStr = "Redis conection not initialized\n";
-        // }
-        // else
-        // {
-        //     // print redis host and port asigned to rContext
-        //     outStr = "Redis connection initialized with host: " + std::string(rContext->tcp.host) 
-        //         + " and port: " + std::to_string(rContext->tcp.port) + "\n";
-        // }
+        outStr = "busClient: " + busClient->toString() + "\n";
 
         return outStr;
     }
@@ -36,6 +28,7 @@ namespace smartnvr20::infrastructure {
         
         std::shared_ptr<FrameHandler> frameHandlerPtr = 
             std::shared_ptr<FrameHandler>(new FrameHandler(_fhc));
+        FrameHandler::_selfPtr = frameHandlerPtr;
         
         return frameHandlerPtr;
     }
@@ -52,6 +45,7 @@ namespace smartnvr20::infrastructure {
         
         std::shared_ptr<FrameHandler> frameHandlerPtr = 
             std::shared_ptr<FrameHandler>(new FrameHandler(FrameHandlerConfig(_host, _port, _dbPasswd)));
+        FrameHandler::_selfPtr = frameHandlerPtr;
         
         return frameHandlerPtr;
     }
@@ -63,5 +57,9 @@ namespace smartnvr20::infrastructure {
         busClient = busclient::BusClientFactory(_fhc.getHost(), _fhc.getPort(), _fhc.getPassword());
         FrameHandler::initialized = true;
     }
+
+
+    // ------------------------------------------------------------------
+
 
 } // namespace commbus::domain
