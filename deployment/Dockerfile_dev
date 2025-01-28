@@ -37,6 +37,16 @@ RUN make
 RUN make install
 RUN make clean
 
+WORKDIR /usr/src
+RUN git clone --recurse-submodules -b v1.44.0 https://github.com/grpc/grpc
+WORKDIR /usr/src/grpc
+RUN mkdir -p cmake/build
+WORKDIR /usr/src/grpc/cmake/build
+RUN cmake ../..
+RUN make -j
+RUN make install
+RUN make clean
+
 RUN ldconfig
 
 WORKDIR /usr/smartnvr20
