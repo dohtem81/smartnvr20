@@ -319,6 +319,7 @@ infrastructure/framehandlerconfig.o: infrastructure/framehandlerconfig.cpp.o
 
 # target to build an object file
 infrastructure/framehandlerconfig.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/framehandlerconfig.cpp.o
 .PHONY : infrastructure/framehandlerconfig.cpp.o
 
@@ -327,6 +328,7 @@ infrastructure/framehandlerconfig.i: infrastructure/framehandlerconfig.cpp.i
 
 # target to preprocess a source file
 infrastructure/framehandlerconfig.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/framehandlerconfig.cpp.i
 .PHONY : infrastructure/framehandlerconfig.cpp.i
 
@@ -335,6 +337,7 @@ infrastructure/framehandlerconfig.s: infrastructure/framehandlerconfig.cpp.s
 
 # target to generate assembly for a file
 infrastructure/framehandlerconfig.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/commbus_test_01.dir/build.make CMakeFiles/commbus_test_01.dir/infrastructure/framehandlerconfig.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/framehandler_test_01.dir/build.make CMakeFiles/framehandler_test_01.dir/infrastructure/framehandlerconfig.cpp.s
 .PHONY : infrastructure/framehandlerconfig.cpp.s
 

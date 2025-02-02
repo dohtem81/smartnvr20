@@ -19,7 +19,7 @@ namespace smartnvr20::lib
 
         //std::string getConfigFile() { return pathAndFileName; }
 
-        iConfiguration(const std::shared_ptr<FileLocation> _pathAndFileName) : pathAndFileName(_pathAndFileName->getPath() + _pathAndFileName->getFile()) {}
+        iConfiguration(std::shared_ptr<FileLocation> _pathAndFileName) { pathAndFileName = _pathAndFileName->toString(); }
         
     protected:
         

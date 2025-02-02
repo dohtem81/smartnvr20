@@ -54,6 +54,7 @@ target_link_libraries(proto_gen
 
 add_executable( commbus_test_01
     ./infrastructure/RedisClient/busclient.cpp
+    ./infrastructure/framehandlerconfig.cpp
     ./tests/infrastructure/commbus_test_01.cpp)
 target_link_libraries(commbus_test_01 ${OpenCV_LIBS} ${hiredis_LIBRARIES} ${spdlog_LIBS} ${nlohmann_json_LIBS} ${GTEST_LIBRARIES} proto_gen pthread) 
 

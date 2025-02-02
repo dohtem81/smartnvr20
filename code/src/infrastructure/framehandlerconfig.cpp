@@ -5,11 +5,12 @@ using namespace smartnvr20::lib;
 namespace smartnvr20::infrastructure {
 
 // ------------------------------------------------------------------
-FrameHandlerConfig::FrameHandlerConfig(std::shared_ptr<smartnvr20::lib::FileLocation> _configFileLocation) : iConfiguration(_configFileLocation) {
+FrameHandlerConfig::FrameHandlerConfig(std::shared_ptr<smartnvr20::lib::FileLocation> _configFileLocation) 
+    : iConfiguration(_configFileLocation) {
     
-    std::ifstream configFile(_configFileLocation->toString());
+    std::ifstream configFile(this->pathAndFileName);
     if (!configFile.is_open()) {
-        throw std::runtime_error("Can't open file: " + _configFileLocation->toString());
+        throw std::runtime_error("Can't open file: " + this->pathAndFileName);
     }
 
     nlohmann::json j;
@@ -26,10 +27,9 @@ FrameHandlerConfig::FrameHandlerConfig(std::shared_ptr<smartnvr20::lib::FileLoca
 
 
 // ------------------------------------------------------------------
-FrameHandlerConfig::FrameHandlerConfig(const std::string& _host, int _port = 6379, const std::string& _dbPassword = "")
+FrameHandlerConfig::FrameHandlerConfig(const std::string& _host, int _port, const std::string& _dbPassword)
     : iConfiguration(), host(_host), port(_port), dbPassword(_dbPassword) {
 }
-
 
 // ------------------------------------------------------------------
 
