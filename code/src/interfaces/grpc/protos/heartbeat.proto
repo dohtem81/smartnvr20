@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package smartnvr20;
+
+message HeartBeat {
+    string timestamp = 1;
+    int64 sequence_counter = 2;
+    string source = 3;
+}

@@ -1,47 +1,57 @@
 [
 {
   "directory": "/usr/smartnvr20/src/build",
-  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o -c /usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp",
+  "command": "/usr/local/bin/g++ -DCARES_STATICLIB -I/usr/local/include/opencv4 -I/usr/smartnvr20/src/build -g -std=c++17 -o CMakeFiles/proto_gen.dir/heartbeat.pb.cc.o -c /usr/smartnvr20/src/build/heartbeat.pb.cc",
+  "file": "/usr/smartnvr20/src/build/heartbeat.pb.cc"
+},
+{
+  "directory": "/usr/smartnvr20/src/build",
+  "command": "/usr/local/bin/g++ -DCARES_STATICLIB -I/usr/local/include/opencv4 -I/usr/smartnvr20/src/build -g -std=c++17 -o CMakeFiles/proto_gen.dir/heartbeat.grpc.pb.cc.o -c /usr/smartnvr20/src/build/heartbeat.grpc.pb.cc",
+  "file": "/usr/smartnvr20/src/build/heartbeat.grpc.pb.cc"
+},
+{
+  "directory": "/usr/smartnvr20/src/build",
+  "command": "/usr/local/bin/g++ -DCARES_STATICLIB -I/usr/smartnvr20/src/build -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/commbus_test_01.dir/infrastructure/RedisClient/busclient.cpp.o -c /usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp",
   "file": "/usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp"
 },
 {
   "directory": "/usr/smartnvr20/src/build",
-  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o -c /usr/smartnvr20/src/tests/infrastructure/commbus_test_01.cpp",
+  "command": "/usr/local/bin/g++ -DCARES_STATICLIB -I/usr/smartnvr20/src/build -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/commbus_test_01.dir/tests/infrastructure/commbus_test_01.cpp.o -c /usr/smartnvr20/src/tests/infrastructure/commbus_test_01.cpp",
   "file": "/usr/smartnvr20/src/tests/infrastructure/commbus_test_01.cpp"
 },
 {
   "directory": "/usr/smartnvr20/src/build",
-  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/framehandler_test_01.dir/infrastructure/framehandler.cpp.o -c /usr/smartnvr20/src/infrastructure/framehandler.cpp",
+  "command": "/usr/local/bin/g++  -I/usr/smartnvr20/src/build -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/framehandler_test_01.dir/infrastructure/framehandler.cpp.o -c /usr/smartnvr20/src/infrastructure/framehandler.cpp",
   "file": "/usr/smartnvr20/src/infrastructure/framehandler.cpp"
 },
 {
   "directory": "/usr/smartnvr20/src/build",
-  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/framehandler_test_01.dir/infrastructure/framehandlerconfig.cpp.o -c /usr/smartnvr20/src/infrastructure/framehandlerconfig.cpp",
+  "command": "/usr/local/bin/g++  -I/usr/smartnvr20/src/build -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/framehandler_test_01.dir/infrastructure/framehandlerconfig.cpp.o -c /usr/smartnvr20/src/infrastructure/framehandlerconfig.cpp",
   "file": "/usr/smartnvr20/src/infrastructure/framehandlerconfig.cpp"
 },
 {
   "directory": "/usr/smartnvr20/src/build",
-  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/framehandler_test_01.dir/infrastructure/RedisClient/busclient.cpp.o -c /usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp",
+  "command": "/usr/local/bin/g++  -I/usr/smartnvr20/src/build -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/framehandler_test_01.dir/infrastructure/RedisClient/busclient.cpp.o -c /usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp",
   "file": "/usr/smartnvr20/src/infrastructure/RedisClient/busclient.cpp"
 },
 {
   "directory": "/usr/smartnvr20/src/build",
-  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/framehandler_test_01.dir/tests/infrastructure/framehandler_test_01.cpp.o -c /usr/smartnvr20/src/tests/infrastructure/framehandler_test_01.cpp",
+  "command": "/usr/local/bin/g++  -I/usr/smartnvr20/src/build -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/framehandler_test_01.dir/tests/infrastructure/framehandler_test_01.cpp.o -c /usr/smartnvr20/src/tests/infrastructure/framehandler_test_01.cpp",
   "file": "/usr/smartnvr20/src/tests/infrastructure/framehandler_test_01.cpp"
 },
 {
   "directory": "/usr/smartnvr20/src/build",
-  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/camera_test_01.dir/domain/cameraDevice.cpp.o -c /usr/smartnvr20/src/domain/cameraDevice.cpp",
+  "command": "/usr/local/bin/g++  -I/usr/smartnvr20/src/build -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/camera_test_01.dir/domain/cameraDevice.cpp.o -c /usr/smartnvr20/src/domain/cameraDevice.cpp",
   "file": "/usr/smartnvr20/src/domain/cameraDevice.cpp"
 },
 {
   "directory": "/usr/smartnvr20/src/build",
-  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/camera_test_01.dir/tests/domain/camera_test_01.cpp.o -c /usr/smartnvr20/src/tests/domain/camera_test_01.cpp",
+  "command": "/usr/local/bin/g++  -I/usr/smartnvr20/src/build -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/camera_test_01.dir/tests/domain/camera_test_01.cpp.o -c /usr/smartnvr20/src/tests/domain/camera_test_01.cpp",
   "file": "/usr/smartnvr20/src/tests/domain/camera_test_01.cpp"
 },
 {
   "directory": "/usr/smartnvr20/src/build",
-  "command": "/usr/local/bin/g++  -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/filelocation_test_01.dir/tests/lib/filelocation_test_01.cpp.o -c /usr/smartnvr20/src/tests/lib/filelocation_test_01.cpp",
+  "command": "/usr/local/bin/g++  -I/usr/smartnvr20/src/build -isystem /usr/local/include/opencv4 -g -std=c++17 -o CMakeFiles/filelocation_test_01.dir/tests/lib/filelocation_test_01.cpp.o -c /usr/smartnvr20/src/tests/lib/filelocation_test_01.cpp",
   "file": "/usr/smartnvr20/src/tests/lib/filelocation_test_01.cpp"
 }
 ]

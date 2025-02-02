@@ -127,6 +127,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named proto_gen
+
+# Build rule for target.
+proto_gen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 proto_gen
+.PHONY : proto_gen
+
+# fast build rule for target.
+proto_gen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proto_gen.dir/build.make CMakeFiles/proto_gen.dir/build
+.PHONY : proto_gen/fast
+
+#=============================================================================
 # Target rules for targets named commbus_test_01
 
 # Build rule for target.
@@ -201,6 +214,54 @@ domain/cameraDevice.s: domain/cameraDevice.cpp.s
 domain/cameraDevice.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera_test_01.dir/build.make CMakeFiles/camera_test_01.dir/domain/cameraDevice.cpp.s
 .PHONY : domain/cameraDevice.cpp.s
+
+heartbeat.grpc.pb.o: heartbeat.grpc.pb.cc.o
+.PHONY : heartbeat.grpc.pb.o
+
+# target to build an object file
+heartbeat.grpc.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proto_gen.dir/build.make CMakeFiles/proto_gen.dir/heartbeat.grpc.pb.cc.o
+.PHONY : heartbeat.grpc.pb.cc.o
+
+heartbeat.grpc.pb.i: heartbeat.grpc.pb.cc.i
+.PHONY : heartbeat.grpc.pb.i
+
+# target to preprocess a source file
+heartbeat.grpc.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proto_gen.dir/build.make CMakeFiles/proto_gen.dir/heartbeat.grpc.pb.cc.i
+.PHONY : heartbeat.grpc.pb.cc.i
+
+heartbeat.grpc.pb.s: heartbeat.grpc.pb.cc.s
+.PHONY : heartbeat.grpc.pb.s
+
+# target to generate assembly for a file
+heartbeat.grpc.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proto_gen.dir/build.make CMakeFiles/proto_gen.dir/heartbeat.grpc.pb.cc.s
+.PHONY : heartbeat.grpc.pb.cc.s
+
+heartbeat.pb.o: heartbeat.pb.cc.o
+.PHONY : heartbeat.pb.o
+
+# target to build an object file
+heartbeat.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proto_gen.dir/build.make CMakeFiles/proto_gen.dir/heartbeat.pb.cc.o
+.PHONY : heartbeat.pb.cc.o
+
+heartbeat.pb.i: heartbeat.pb.cc.i
+.PHONY : heartbeat.pb.i
+
+# target to preprocess a source file
+heartbeat.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proto_gen.dir/build.make CMakeFiles/proto_gen.dir/heartbeat.pb.cc.i
+.PHONY : heartbeat.pb.cc.i
+
+heartbeat.pb.s: heartbeat.pb.cc.s
+.PHONY : heartbeat.pb.s
+
+# target to generate assembly for a file
+heartbeat.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proto_gen.dir/build.make CMakeFiles/proto_gen.dir/heartbeat.pb.cc.s
+.PHONY : heartbeat.pb.cc.s
 
 infrastructure/RedisClient/busclient.o: infrastructure/RedisClient/busclient.cpp.o
 .PHONY : infrastructure/RedisClient/busclient.o
@@ -386,9 +447,16 @@ help:
 	@echo "... commbus_test_01"
 	@echo "... filelocation_test_01"
 	@echo "... framehandler_test_01"
+	@echo "... proto_gen"
 	@echo "... domain/cameraDevice.o"
 	@echo "... domain/cameraDevice.i"
 	@echo "... domain/cameraDevice.s"
+	@echo "... heartbeat.grpc.pb.o"
+	@echo "... heartbeat.grpc.pb.i"
+	@echo "... heartbeat.grpc.pb.s"
+	@echo "... heartbeat.pb.o"
+	@echo "... heartbeat.pb.i"
+	@echo "... heartbeat.pb.s"
 	@echo "... infrastructure/RedisClient/busclient.o"
 	@echo "... infrastructure/RedisClient/busclient.i"
 	@echo "... infrastructure/RedisClient/busclient.s"

@@ -1,6 +1,9 @@
 FROM dohtem81/gcc_opencv_base:latest
 WORKDIR /usr/src
 
+RUN apt-get update
+RUN apt-get install build-essential autoconf libtool pkg-config -y
+
 RUN git clone https://github.com/redis/hiredis.git
 RUN mkdir /usr/src/hiredis/build
 WORKDIR /usr/src/hiredis/build
@@ -37,13 +40,14 @@ RUN make
 RUN make install
 RUN make clean
 
+RUN apt-get install libssl-dev -y
 WORKDIR /usr/src
-RUN git clone --recurse-submodules -b v1.44.0 https://github.com/grpc/grpc
+RUN git clone --recurse-submodules -b v1.70.0 --depth 1 --shallow-submodules https://github.com/grpc/grpc
 WORKDIR /usr/src/grpc
 RUN mkdir -p cmake/build
 WORKDIR /usr/src/grpc/cmake/build
-RUN cmake ../..
-RUN make -j
+RUN cmake -DgRPC_BUILD_TESTS=OFF -DCMAKE_INSTALL_PREFIX=/usr/local ../..
+RUN make
 RUN make install
 RUN make clean
 
