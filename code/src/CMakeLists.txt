@@ -15,6 +15,7 @@ include_directories( ${spdlog_INCLUDE_DIRS} )
 find_package(nlohmann_json REQUIRED)
 include_directories(${nlohmann_json_INCLUDE_DIRS})
 find_package(Protobuf REQUIRED)
+find_package(utf8_range REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
@@ -63,7 +64,17 @@ add_executable( framehandler_test_01
     ./infrastructure/framehandlerconfig.cpp
     ./infrastructure/RedisClient/busclient.cpp
     ./tests/infrastructure/framehandler_test_01.cpp)
-target_link_libraries(framehandler_test_01 ${OpenCV_LIBS} ${hiredis_LIBRARIES} ${spdlog_LIBS} ${nlohmann_json_LIBS} ${GTEST_LIBRARIES} pthread) 
+target_link_libraries(framehandler_test_01 
+    ${OpenCV_LIBS} 
+    ${hiredis_LIBRARIES} 
+    ${spdlog_LIBS} 
+    ${nlohmann_json_LIBS} 
+    ${GTEST_LIBRARIES} 
+    proto_gen 
+    protobuf::libprotobuf
+    utf8_range
+    gRPC::grpc++    
+    pthread) 
 
 add_executable( camera_test_01 
     ./domain/cameraDevice.cpp 

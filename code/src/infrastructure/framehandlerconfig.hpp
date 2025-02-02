@@ -19,10 +19,11 @@ public:
     std::string getHost() { return host; }
     int getPort() { return port; }
     std::string getPassword() { return (dbPassword.empty() ? "" : dbPassword); }
+
 private:
     std::string host;
     int port;
-    std::string dbPassword;
+    std::string dbPassword;   
 };
 
 } // namespace smartnvr20::infrastructure

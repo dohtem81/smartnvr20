@@ -55,11 +55,29 @@ namespace smartnvr20::infrastructure {
     FrameHandler::FrameHandler(FrameHandlerConfig _fhc)
     {
         busClient = busclient::BusClientFactory(_fhc.getHost(), _fhc.getPort(), _fhc.getPassword());
+        StartGrpcServer("0.0.0.0:50051");
         FrameHandler::initialized = true;
     }
 
 
     // ------------------------------------------------------------------
+    void FrameHandler::StartGrpcServer(const std::string& address) {
+        grpc::ServerBuilder builder;
+        builder.AddListeningPort(address, grpc::InsecureServerCredentials());
+        builder.RegisterService(this);
+        grpcServer = builder.BuildAndStart();
+    }
 
+
+    // ------------------------------------------------------------------
+    grpc::Status FrameHandler::SendHeartbeat(
+        grpc::ServerContext* context,
+        const HeartbeatRequest* request,
+        HeartbeatResponse* response) {
+        
+        response->set_success(true);
+        response->set_message("Heartbeat received from " + request->client_id());
+        return grpc::Status::OK;
+    }    
 
 } // namespace commbus::domain

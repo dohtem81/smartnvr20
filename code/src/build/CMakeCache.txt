@@ -268,6 +268,9 @@ smartnvr20_SOURCE_DIR:STATIC=/usr/smartnvr20/src
 //The directory containing a CMake configuration file for spdlog.
 spdlog_DIR:PATH=/usr/local/lib/cmake/spdlog
 
+//The directory containing a CMake configuration file for utf8_range.
+utf8_range_DIR:PATH=/usr/local/lib/cmake/utf8_range
+
 
 ########################
 # INTERNAL cache entries
