@@ -31,5 +31,26 @@
 *.out
 *.app
 
-build/
 .vscode
+
+# Build directories
+build/
+CMakeFiles/
+*.cmake
+CMakeCache.txt
+
+# Compiled files
+*.o
+*.so
+*.dylib
+*.a
+
+# IDE specific
+.vscode/
+.idea/
+
+# Generated files
+*.pb.cc
+*.pb.h
+*.grpc.pb.cc
+*.grpc.pb.h
