@@ -30,6 +30,7 @@ namespace smartnvr20::infrastructure {
             std::shared_ptr<FrameHandler>(new FrameHandler(_fhc));
         FrameHandler::_selfPtr = frameHandlerPtr;
         
+        FrameHandler::initialized = true;
         return frameHandlerPtr;
     }
 
